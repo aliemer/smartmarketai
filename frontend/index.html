@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>SmartMarketAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lightweight-charts@4/dist/lightweight-charts.standalone.production.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>SmartMarketAI</h1>
+    <nav>
+      <button id="btn-coin"><img src="icons/bitcoin.svg" alt="coin" /> Coin</button>
+      <button id="btn-bist"><img src="icons/bist.svg"    alt="bist" /> Bist100</button>
+      <button id="btn-news"><img src="icons/news.svg"    alt="news" /> Haberler</button>
+    </nav>
+  </header>
+
+  <main id="content">
+    <p>Ne izlemek istersin, tatlım?</p>
+  </main>
+
+  <!-- Sağ panel -->
+  <aside id="sidebar">
+    <input id="search" placeholder="Ara…" autocomplete="off" />
+    <!-- Indicator picker -->
+    <div id="ind-picker">
+      <select id="ind-name">
+        <option value="sma">SMA</option>
+        <option value="ema">EMA</option>
+        <option value="rsi">RSI</option>
+        <option value="macd">MACD</option>
+        <option value="bbands">Bollinger</option>
+      </select>
+      <input id="ind-param" placeholder='{"length":20}' />
+      <button id="ind-add">➕</button>
+    </div>
+    <ul id="symbol-list"></ul>
+  </aside>
+
+  <footer>© 2025 SmartMarketAI</footer>
+</body>
+</html>

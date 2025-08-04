@@ -1,0 +1,140 @@
+/* ========== Genel ========== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+body{
+  background:#121212;
+  color:#e5e5e5;
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+}
+
+/* ========== Header ========== */
+header{
+  background:#1f1f1f;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+h1{font-size:1.4rem;}
+nav{display:flex;gap:.7rem;}
+nav button{
+  background:#2d2d2d;
+  color:#fff;
+  border:none;
+  padding:.6rem 1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  border-radius:6px;
+}
+nav button:hover{background:#3a3a3a;}
+nav img{width:20px;height:20px;}
+
+/* ========== İçerik alanı ========== */
+#content{
+  flex:1;
+  overflow-y:auto;
+  padding:1rem;
+  margin-right:250px;           /* sağ panel genişliği kadar boşluk */
+}
+
+/* ========== Grafik alanı ========== */
+.chart-wrapper{
+  width:100%;
+  height:calc(100vh - 160px);   /* header + footer hariç */
+  display:flex;
+  flex-direction:column;
+}
+#chart-candle{flex:7;}
+#chart-volume{flex:3;border-top:1px solid #333;}
+
+/* ========== Zaman dilimi (tf-select) ========== */
+#tf-select{
+  background:#2d2d2d;
+  color:#fff;
+  border:none;
+  padding:.35rem .8rem;
+  border-radius:4px;
+  margin-left:.8rem;
+  cursor:pointer;
+}
+
+/* ========== Indicator picker (başlık içi) ========== */
+#ind-picker{
+  display:inline-flex;
+  gap:.4rem;
+  margin-left:1rem;             /* zaman diliminden boşluk */
+  vertical-align:middle;
+}
+#ind-name,
+#ind-param{
+  background:#2d2d2d;
+  color:#fff;
+  border:none;
+  padding:.35rem .5rem;
+  border-radius:4px;
+}
+#ind-param{width:110px;}
+#ind-add{
+  padding:0 .8rem;
+  background:#4caf50;
+  border:none;
+  border-radius:4px;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+#ind-add:hover{background:#43a047;}
+
+/* ========== Sağ panel ========== */
+#sidebar{
+  position:fixed;
+  right:0;
+  top:60px;                     /* header yüksekliği */
+  bottom:0;
+  width:240px;
+  background:#1b1b1b;
+  border-left:1px solid #333;
+  display:flex;
+  flex-direction:column;
+  padding:.6rem;
+}
+#search{
+  padding:.5rem;
+  border:none;
+  border-radius:4px;
+  background:#2d2d2d;
+  color:#fff;
+  margin-bottom:.6rem;
+}
+#symbol-list{
+  list-style:none;
+  overflow-y:auto;
+  flex:1;
+}
+#symbol-list li{
+  padding:.35rem .4rem;
+  cursor:pointer;
+  border-radius:4px;
+  white-space:nowrap;
+}
+#symbol-list li:hover{background:#333;}
+
+/* ========== TradingView logosunu gizle ========== */
+/*  Light-charts, candlestick canvas’ının hemen arkasında küçük bir div oluşturuyor  */
+#chart-candle canvas + div{display:none !important;}
+
+/* ========== Footer ========== */
+footer{
+  background:#1f1f1f;
+  text-align:center;
+  padding:.5rem;
+  font-size:.75rem;
+}
